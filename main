@@ -1,0 +1,35 @@
+import math
+
+
+def get_input_x() -> float:
+    while True:
+        try:
+            return float(input("Введите значение x = "))
+        except ValueError:
+            print(f"Введено не число. Повторите ввод.")
+
+
+def func_y(x: float) -> float:
+    if 5 <= x < 10:
+        return 1 - math.sin(x)
+    elif 10 <= x < 15:
+        return 1 + math.cos(x)
+    elif 15 <= x < 20:
+        return math.tan(x)
+    elif 10 <= x < 25:
+        return 1 / math.tan(x)
+    else:
+        return 0
+
+
+def print_func_y(y: float, x: float):
+    print(f"Значение функции y = {y} при x = {x}")
+
+
+def main():
+    x = get_input_x()
+    print_func_y(func_y(x), x)
+
+
+if __name__ == "__main__":
+    main()
